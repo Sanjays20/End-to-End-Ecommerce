@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DS_BULK_ADLS_SOURCE'"
 		},
+		"LS_API_ADLS_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_API_ADLS_PARQUET'"
+		},
 		"LS_BULK_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_BULK_ADLS_PARQUET'"
@@ -59,6 +63,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
 		},
+		"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
 		"LS_BULK_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
@@ -86,6 +94,10 @@
 		"LS_JSON_ADLS_SOURCE_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_ADLS_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/JqZKPN/data"
 		},
 		"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -141,6 +153,9 @@
 					"DS_BULK_ADLS_SOURCE_accountKey": {
 						"value": "[parameters('DS_BULK_ADLS_SOURCE_accountKey')]"
 					},
+					"LS_API_ADLS_PARQUET_accountKey": {
+						"value": "[parameters('LS_API_ADLS_PARQUET_accountKey')]"
+					},
 					"LS_BULK_ADLS_PARQUET_accountKey": {
 						"value": "[parameters('LS_BULK_ADLS_PARQUET_accountKey')]"
 					},
@@ -174,6 +189,9 @@
 					"DS_BULK_ADLS_SOURCE_properties_typeProperties_url": {
 						"value": "[parameters('DS_BULK_ADLS_SOURCE_properties_typeProperties_url')]"
 					},
+					"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_API_ADLS_PARQUET_properties_typeProperties_url')]"
+					},
 					"LS_BULK_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_BULK_ADLS_PARQUET_properties_typeProperties_url')]"
 					},
@@ -194,6 +212,9 @@
 					},
 					"LS_JSON_ADLS_SOURCE_properties_typeProperties_url": {
 						"value": "[parameters('LS_JSON_ADLS_SOURCE_properties_typeProperties_url')]"
+					},
+					"LS_RESTAPI_ADLS_SOURCE_properties_typeProperties_url": {
+						"value": "[parameters('LS_RESTAPI_ADLS_SOURCE_properties_typeProperties_url')]"
 					},
 					"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET_properties_typeProperties_url')]"

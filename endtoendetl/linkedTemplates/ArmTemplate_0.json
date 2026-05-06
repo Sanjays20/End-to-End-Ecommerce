@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DS_BULK_ADLS_SOURCE'"
 		},
+		"LS_API_ADLS_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_API_ADLS_PARQUET'"
+		},
 		"LS_BULK_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_BULK_ADLS_PARQUET'"
@@ -55,6 +59,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
 		},
+		"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
 		"LS_BULK_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
@@ -82,6 +90,10 @@
 		"LS_JSON_ADLS_SOURCE_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_ADLS_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/JqZKPN/data"
 		},
 		"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -112,6 +124,23 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('DS_BULK_ADLS_SOURCE_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_API_ADLS_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_API_ADLS_PARQUET_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_API_ADLS_PARQUET_accountKey')]"
 					}
 				}
 			},
@@ -237,6 +266,21 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_RESTAPI_ADLS_SOURCE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('LS_RESTAPI_ADLS_SOURCE_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_SFTP_ADLS_PARQUET')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -296,6 +340,67 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_API_ADLS_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_API_ADLS_PARQUET",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": {
+							"value": "@concat('api/', formatDateTime(utcNow(), 'yyyy'), '/', formatDateTime(utcNow(), 'MM'), '/', formatDateTime(utcNow(), 'dd'))",
+							"type": "Expression"
+						},
+						"fileSystem": "input"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "order_id",
+						"type": "UTF8"
+					},
+					{
+						"name": "customer_id",
+						"type": "UTF8"
+					},
+					{
+						"name": "order_status",
+						"type": "UTF8"
+					},
+					{
+						"name": "order_purchase_timestamp",
+						"type": "INT96"
+					},
+					{
+						"name": "order_approved_at",
+						"type": "INT96"
+					},
+					{
+						"name": "order_delivered_carrier_date",
+						"type": "INT96"
+					},
+					{
+						"name": "order_delivered_customer_date",
+						"type": "INT96"
+					},
+					{
+						"name": "order_estimated_delivery_date",
+						"type": "INT96"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_API_ADLS_PARQUET')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DS_BULK_ADLS_PARQUET')]",
@@ -479,132 +584,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LS_EXCEL_ADLS_PARQUET')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_EXCEL_ADLS_SOURCE')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_EXCEL_ADLS_SOURCE",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Excel",
-				"typeProperties": {
-					"sheetName": "olist_order_reviews_dataset",
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": "olist_order_reviews_dataset.xlsx",
-						"folderPath": "excel",
-						"fileSystem": "input"
-					}
-				},
-				"schema": [
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_EXCEL_ADLS_SOURCE')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_JSON_ADLS_PARQUET')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_JSON_ADLS_PARQUET",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": {
-							"value": "@concat('json/', formatDateTime(utcNow(), 'yyyy'), '/', formatDateTime(utcNow(), 'MM'), '/', formatDateTime(utcNow(), 'dd'))",
-							"type": "Expression"
-						},
-						"fileSystem": "input"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_JSON_ADLS_PARQUET')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_JSON_ADLS_SOURCE')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_JSON_ADLS_SOURCE",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": "sample.json",
-						"folderPath": "json",
-						"fileSystem": "input"
-					}
-				},
-				"schema": {
-					"type": "object",
-					"properties": {
-						"order_id": {
-							"type": "string"
-						},
-						"order_item_id": {
-							"type": "integer"
-						},
-						"product_id": {
-							"type": "string"
-						},
-						"seller_id": {
-							"type": "string"
-						},
-						"shipping_limit_date": {
-							"type": "string"
-						},
-						"price": {
-							"type": "number"
-						},
-						"freight_value": {
-							"type": "number"
-						}
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_JSON_ADLS_SOURCE')]"
 			]
 		}
 	]
