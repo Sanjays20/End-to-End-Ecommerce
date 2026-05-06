@@ -554,7 +554,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "olist_products_dataset"
+					"table": "olist_sellers_dataset"
 				}
 			},
 			"dependsOn": [
