@@ -35,6 +35,12 @@
 		"LS_SFTP_ADLS_RAW_accountKey": {
 			"value": ""
 		},
+		"LS_SQL_ADLS_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_ADLS_SOURCE_password": {
+			"value": ""
+		},
 		"DS_BULK_ADLS_SOURCE_properties_typeProperties_url": {
 			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
 		},
@@ -64,6 +70,18 @@
 		},
 		"LS_SFTP_ADLS_RAW_properties_typeProperties_url": {
 			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_SQL_ADLS_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_SQL_ADLS_SOURCE_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"LS_SQL_ADLS_SOURCE_properties_typeProperties_database": {
+			"value": "End_to_End_ETL_PROJECT"
+		},
+		"LS_SQL_ADLS_SOURCE_properties_typeProperties_userName": {
+			"value": "admin"
 		}
 	}
 }
