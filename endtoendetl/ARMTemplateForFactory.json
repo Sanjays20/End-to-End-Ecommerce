@@ -1013,7 +1013,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "olist_orders_dataset"
+					"table": "olist_products_dataset"
 				}
 			},
 			"dependsOn": [
