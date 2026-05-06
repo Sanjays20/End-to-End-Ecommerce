@@ -11,6 +11,7 @@
 			"sheetName": "olist_order_reviews_dataset",
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "olist_order_reviews_dataset.xlsx",
 				"folderPath": "excel",
 				"fileSystem": "input"
 			}
