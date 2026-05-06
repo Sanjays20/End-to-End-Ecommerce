@@ -11,6 +11,12 @@
 		"LS_CSV_ADLS_SOURCE_accountKey": {
 			"value": ""
 		},
+		"LS_EXCEL_ADLS_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_EXCEL_ADLS_SOURCE_accountKey": {
+			"value": ""
+		},
 		"LS_SFTP_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
@@ -21,6 +27,12 @@
 			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
 		},
 		"LS_CSV_ADLS_SOURCE_properties_typeProperties_url": {
+			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_ADLS_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_ADLS_SOURCE_properties_typeProperties_url": {
 			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
 		},
 		"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {

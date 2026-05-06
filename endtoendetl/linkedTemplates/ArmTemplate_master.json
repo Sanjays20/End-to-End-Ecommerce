@@ -15,6 +15,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS_SOURCE'"
 		},
+		"LS_EXCEL_ADLS_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_ADLS_PARQUET'"
+		},
+		"LS_EXCEL_ADLS_SOURCE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_ADLS_SOURCE'"
+		},
 		"LS_SFTP_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_ADLS_PARQUET'"
@@ -28,6 +36,14 @@
 			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
 		},
 		"LS_CSV_ADLS_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_ADLS_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_ADLS_SOURCE_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
 		},
@@ -72,6 +88,12 @@
 					"LS_CSV_ADLS_SOURCE_accountKey": {
 						"value": "[parameters('LS_CSV_ADLS_SOURCE_accountKey')]"
 					},
+					"LS_EXCEL_ADLS_PARQUET_accountKey": {
+						"value": "[parameters('LS_EXCEL_ADLS_PARQUET_accountKey')]"
+					},
+					"LS_EXCEL_ADLS_SOURCE_accountKey": {
+						"value": "[parameters('LS_EXCEL_ADLS_SOURCE_accountKey')]"
+					},
 					"LS_SFTP_ADLS_PARQUET_accountKey": {
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET_accountKey')]"
 					},
@@ -83,6 +105,12 @@
 					},
 					"LS_CSV_ADLS_SOURCE_properties_typeProperties_url": {
 						"value": "[parameters('LS_CSV_ADLS_SOURCE_properties_typeProperties_url')]"
+					},
+					"LS_EXCEL_ADLS_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_EXCEL_ADLS_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_EXCEL_ADLS_SOURCE_properties_typeProperties_url": {
+						"value": "[parameters('LS_EXCEL_ADLS_SOURCE_properties_typeProperties_url')]"
 					},
 					"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_ADLS_PARQUET_properties_typeProperties_url')]"
