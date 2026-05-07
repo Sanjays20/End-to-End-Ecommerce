@@ -718,7 +718,8 @@
 								"referenceName": "DS_AZSQL_CSV_METADATA",
 								"type": "DatasetReference",
 								"parameters": {}
-							}
+							},
+							"firstRowOnly": false
 						}
 					},
 					{
