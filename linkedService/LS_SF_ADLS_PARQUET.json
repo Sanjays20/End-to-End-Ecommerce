@@ -1,0 +1,12 @@
+{
+	"name": "LS_SF_ADLS_PARQUET",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"sasUri": "https://blobetl.blob.core.windows.net/input",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDgzOThBNzc5LTA0RDktNDUxRC04RUJFLUEwRjA2RkExRDBDNl82OWYyOGY5Yy0zYWFiLTQ5NDQtOTg4NC05MjM0MzAwNDA5ODIiDQp9"
+		}
+	}
+}
