@@ -1,0 +1,12 @@
+{
+	"name": "DS_AZSQL_CSVEXCEL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AZSQL_CSVEXCEL",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
