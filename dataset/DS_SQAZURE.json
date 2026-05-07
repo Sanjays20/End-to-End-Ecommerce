@@ -1,0 +1,12 @@
+{
+	"name": "DS_SQAZURE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQAZURE",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}

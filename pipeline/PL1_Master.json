@@ -20,7 +20,7 @@
 				}
 			},
 			{
-				"name": "Execute Pipeline1",
+				"name": "EXEC_RAW_DATA",
 				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
@@ -35,7 +35,17 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"waitOnCompletion": true
+					"pipeline": {
+						"referenceName": "PL2_RAW_DATA",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"Trigger": {
+							"value": "@pipeline().parameters.Trigger",
+							"type": "Expression"
+						}
+					}
 				}
 			}
 		],
