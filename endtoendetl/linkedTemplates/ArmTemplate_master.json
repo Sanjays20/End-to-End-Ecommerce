@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DS_BULK_ADLS_SOURCE'"
 		},
+		"DS_SF_ALDS_SOURCE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DS_SF_ALDS_SOURCE'"
+		},
 		"LS_API_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_API_ADLS_PARQUET'"
@@ -63,6 +67,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
 		},
+		"DS_SF_ALDS_SOURCE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DBAZURESNOW"
+		},
 		"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
@@ -106,6 +114,10 @@
 		"LS_SFTP_ADLS_RAW_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_SF_ADLS_PARQUET_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'LS_SF_ADLS_PARQUET'"
 		},
 		"LS_SQL_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -153,6 +165,9 @@
 					"DS_BULK_ADLS_SOURCE_accountKey": {
 						"value": "[parameters('DS_BULK_ADLS_SOURCE_accountKey')]"
 					},
+					"DS_SF_ALDS_SOURCE_password": {
+						"value": "[parameters('DS_SF_ALDS_SOURCE_password')]"
+					},
 					"LS_API_ADLS_PARQUET_accountKey": {
 						"value": "[parameters('LS_API_ADLS_PARQUET_accountKey')]"
 					},
@@ -189,6 +204,9 @@
 					"DS_BULK_ADLS_SOURCE_properties_typeProperties_url": {
 						"value": "[parameters('DS_BULK_ADLS_SOURCE_properties_typeProperties_url')]"
 					},
+					"DS_SF_ALDS_SOURCE_properties_typeProperties_database": {
+						"value": "[parameters('DS_SF_ALDS_SOURCE_properties_typeProperties_database')]"
+					},
 					"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_API_ADLS_PARQUET_properties_typeProperties_url')]"
 					},
@@ -221,6 +239,9 @@
 					},
 					"LS_SFTP_ADLS_RAW_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_ADLS_RAW_properties_typeProperties_url')]"
+					},
+					"LS_SF_ADLS_PARQUET_sasUri": {
+						"value": "[parameters('LS_SF_ADLS_PARQUET_sasUri')]"
 					},
 					"LS_SQL_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SQL_ADLS_PARQUET_properties_typeProperties_url')]"
@@ -259,6 +280,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'endtoendetl_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "endtoendetl_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'endtoendetl_ArmTemplate_1')]"
 			]
 		}
 	]

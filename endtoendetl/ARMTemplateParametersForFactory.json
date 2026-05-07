@@ -8,6 +8,9 @@
 		"DS_BULK_ADLS_SOURCE_accountKey": {
 			"value": ""
 		},
+		"DS_SF_ALDS_SOURCE_password": {
+			"value": ""
+		},
 		"LS_API_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
@@ -47,6 +50,9 @@
 		"DS_BULK_ADLS_SOURCE_properties_typeProperties_url": {
 			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
 		},
+		"DS_SF_ALDS_SOURCE_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
+		},
 		"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
 		},
@@ -79,6 +85,9 @@
 		},
 		"LS_SFTP_ADLS_RAW_properties_typeProperties_url": {
 			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_SF_ADLS_PARQUET_sasUri": {
+			"value": ""
 		},
 		"LS_SQL_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
