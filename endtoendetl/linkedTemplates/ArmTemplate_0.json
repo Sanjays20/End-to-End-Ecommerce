@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_API_ADLS_PARQUET'"
 		},
+		"LS_AZSQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQL'"
+		},
 		"LS_BULK_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_BULK_ADLS_PARQUET'"
@@ -55,6 +59,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_ADLS_RAW'"
 		},
+		"LS_SQAZURE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQAZURE'"
+		},
 		"LS_SQL_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SQL_ADLS_PARQUET'"
@@ -70,6 +78,18 @@
 		"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_AZSQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-srvr-etl-dev1.database.windows.net"
+		},
+		"LS_AZSQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-etl-dev"
+		},
+		"LS_AZSQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin1"
 		},
 		"LS_BULK_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -114,6 +134,18 @@
 		"LS_SF_ADLS_PARQUET_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'LS_SF_ADLS_PARQUET'"
+		},
+		"LS_SQAZURE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-srvr-etl-dev1.database.windows.net"
+		},
+		"LS_SQAZURE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-etl-dev"
+		},
+		"LS_SQAZURE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin1"
 		},
 		"LS_SQL_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -176,6 +208,28 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_API_ADLS_PARQUET_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZSQL')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZSQL_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZSQL_properties_typeProperties_database')]",
+					"encrypt": "optional",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZSQL_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZSQL_password')]"
 					}
 				}
 			},
@@ -363,6 +417,28 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_SQAZURE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_SQAZURE_properties_typeProperties_server')]",
+					"database": "[parameters('LS_SQAZURE_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_SQAZURE_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SQAZURE_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_SQL_ADLS_PARQUET')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -451,109 +527,21 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_BULK_ADLS_PARQUET')]",
+			"name": "[concat(parameters('factoryName'), '/DS_AZSQL')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_BULK_ADLS_PARQUET",
+					"referenceName": "LS_AZSQL",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": {
-							"value": "@concat('bulk/', formatDateTime(utcNow(), 'yyyy'), '/', formatDateTime(utcNow(), 'MM'), '/', formatDateTime(utcNow(), 'dd'))",
-							"type": "Expression"
-						},
-						"fileSystem": "input"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": []
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_BULK_ADLS_PARQUET')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_BULK_ADLS_SOURCE')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DS_BULK_ADLS_SOURCE",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": "olist_geolocation_dataset.csv",
-						"folderPath": "bulk_upload",
-						"fileSystem": "input"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "geolocation_zip_code_prefix",
-						"type": "String"
-					},
-					{
-						"name": "geolocation_lat",
-						"type": "String"
-					},
-					{
-						"name": "geolocation_lng",
-						"type": "String"
-					},
-					{
-						"name": "geolocation_city",
-						"type": "String"
-					},
-					{
-						"name": "geolocation_state",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DS_BULK_ADLS_SOURCE')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_CSV_ADLS_PARQUET')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_CSV_ADLS_PARQUET",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": {
-							"value": "@concat('csv/', formatDateTime(utcNow(), 'yyyy'), '/', formatDateTime(utcNow(), 'MM'), '/', formatDateTime(utcNow(), 'dd'))",
-							"type": "Expression"
-						},
-						"fileSystem": "input"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_CSV_ADLS_PARQUET')]"
+				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQL')]"
 			]
 		}
 	]

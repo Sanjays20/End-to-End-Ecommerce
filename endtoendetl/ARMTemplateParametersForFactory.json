@@ -14,6 +14,9 @@
 		"LS_API_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_AZSQL_password": {
+			"value": ""
+		},
 		"LS_BULK_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
@@ -41,6 +44,9 @@
 		"LS_SFTP_ADLS_RAW_accountKey": {
 			"value": ""
 		},
+		"LS_SQAZURE_password": {
+			"value": ""
+		},
 		"LS_SQL_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
@@ -55,6 +61,15 @@
 		},
 		"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_AZSQL_properties_typeProperties_server": {
+			"value": "sql-srvr-etl-dev1.database.windows.net"
+		},
+		"LS_AZSQL_properties_typeProperties_database": {
+			"value": "sql-db-etl-dev"
+		},
+		"LS_AZSQL_properties_typeProperties_userName": {
+			"value": "admin1"
 		},
 		"LS_BULK_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
@@ -88,6 +103,15 @@
 		},
 		"LS_SF_ADLS_PARQUET_sasUri": {
 			"value": ""
+		},
+		"LS_SQAZURE_properties_typeProperties_server": {
+			"value": "sql-srvr-etl-dev1.database.windows.net"
+		},
+		"LS_SQAZURE_properties_typeProperties_database": {
+			"value": "sql-db-etl-dev"
+		},
+		"LS_SQAZURE_properties_typeProperties_userName": {
+			"value": "admin1"
 		},
 		"LS_SQL_ADLS_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"

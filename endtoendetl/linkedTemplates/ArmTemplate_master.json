@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_API_ADLS_PARQUET'"
 		},
+		"LS_AZSQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQL'"
+		},
 		"LS_BULK_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_BULK_ADLS_PARQUET'"
@@ -55,6 +59,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_ADLS_RAW'"
 		},
+		"LS_SQAZURE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQAZURE'"
+		},
 		"LS_SQL_ADLS_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SQL_ADLS_PARQUET'"
@@ -74,6 +82,18 @@
 		"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_AZSQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-srvr-etl-dev1.database.windows.net"
+		},
+		"LS_AZSQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-etl-dev"
+		},
+		"LS_AZSQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin1"
 		},
 		"LS_BULK_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -118,6 +138,18 @@
 		"LS_SF_ADLS_PARQUET_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'LS_SF_ADLS_PARQUET'"
+		},
+		"LS_SQAZURE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-srvr-etl-dev1.database.windows.net"
+		},
+		"LS_SQAZURE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-etl-dev"
+		},
+		"LS_SQAZURE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin1"
 		},
 		"LS_SQL_ADLS_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -171,6 +203,9 @@
 					"LS_API_ADLS_PARQUET_accountKey": {
 						"value": "[parameters('LS_API_ADLS_PARQUET_accountKey')]"
 					},
+					"LS_AZSQL_password": {
+						"value": "[parameters('LS_AZSQL_password')]"
+					},
 					"LS_BULK_ADLS_PARQUET_accountKey": {
 						"value": "[parameters('LS_BULK_ADLS_PARQUET_accountKey')]"
 					},
@@ -198,6 +233,9 @@
 					"LS_SFTP_ADLS_RAW_accountKey": {
 						"value": "[parameters('LS_SFTP_ADLS_RAW_accountKey')]"
 					},
+					"LS_SQAZURE_password": {
+						"value": "[parameters('LS_SQAZURE_password')]"
+					},
 					"LS_SQL_ADLS_PARQUET_accountKey": {
 						"value": "[parameters('LS_SQL_ADLS_PARQUET_accountKey')]"
 					},
@@ -209,6 +247,15 @@
 					},
 					"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_API_ADLS_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_AZSQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_AZSQL_properties_typeProperties_server')]"
+					},
+					"LS_AZSQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_AZSQL_properties_typeProperties_database')]"
+					},
+					"LS_AZSQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AZSQL_properties_typeProperties_userName')]"
 					},
 					"LS_BULK_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_BULK_ADLS_PARQUET_properties_typeProperties_url')]"
@@ -242,6 +289,15 @@
 					},
 					"LS_SF_ADLS_PARQUET_sasUri": {
 						"value": "[parameters('LS_SF_ADLS_PARQUET_sasUri')]"
+					},
+					"LS_SQAZURE_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQAZURE_properties_typeProperties_server')]"
+					},
+					"LS_SQAZURE_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQAZURE_properties_typeProperties_database')]"
+					},
+					"LS_SQAZURE_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQAZURE_properties_typeProperties_userName')]"
 					},
 					"LS_SQL_ADLS_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SQL_ADLS_PARQUET_properties_typeProperties_url')]"
