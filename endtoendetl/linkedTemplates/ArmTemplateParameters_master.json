@@ -17,6 +17,9 @@
 		"LS_AZSQL_password": {
 			"value": ""
 		},
+		"LS_AZSQL_CSVEXCEL_password": {
+			"value": ""
+		},
 		"LS_BULK_ADLS_PARQUET_accountKey": {
 			"value": ""
 		},
@@ -69,6 +72,15 @@
 			"value": "sql-db-etl-dev"
 		},
 		"LS_AZSQL_properties_typeProperties_userName": {
+			"value": "admin1"
+		},
+		"LS_AZSQL_CSVEXCEL_properties_typeProperties_server": {
+			"value": "sql-srvr-etl-dev1.database.windows.net"
+		},
+		"LS_AZSQL_CSVEXCEL_properties_typeProperties_database": {
+			"value": "sql-db-etl-dev"
+		},
+		"LS_AZSQL_CSVEXCEL_properties_typeProperties_userName": {
 			"value": "admin1"
 		},
 		"LS_BULK_ADLS_PARQUET_properties_typeProperties_url": {
