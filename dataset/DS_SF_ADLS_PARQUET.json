@@ -1,0 +1,23 @@
+{
+	"name": "DS_SF_ADLS_PARQUET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SF_ADLS_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@concat('sf/', formatDateTime(utcNow(), 'yyyy'), '/', formatDateTime(utcNow(), 'MM'), '/', formatDateTime(utcNow(), 'dd'))",
+					"type": "Expression"
+				},
+				"container": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
