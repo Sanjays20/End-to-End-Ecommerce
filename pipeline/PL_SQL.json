@@ -21,13 +21,7 @@
 						"partitionOption": "None"
 					},
 					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "DS_ONPREM_ADLS_SRC",
-						"type": "DatasetReference"
-					}
-				]
+				}
 			}
 		],
 		"annotations": []
