@@ -1,0 +1,20 @@
+{
+	"name": "DS_SQL_ONPREM_ADLS_TRG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_SQL_ONPREM_ADLS_TRG",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "@concat('sql/', formatDateTime(utcNow(), 'yyyy'), '/', formatDateTime(utcNow(), 'MM'), '/', formatDateTime(utcNow(), 'dd'))",
+				"fileSystem": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
