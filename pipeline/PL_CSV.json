@@ -102,7 +102,7 @@
 						"referenceName": "DS_AZSQL_CSV_METADATA",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": false
+					"firstRowOnly": true
 				}
 			},
 			{
@@ -129,7 +129,7 @@
 					"storedProcedureParameters": {
 						"jobid": {
 							"value": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstrow.jobid",
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.jobId",
 								"type": "Expression"
 							},
 							"type": "Int32"
