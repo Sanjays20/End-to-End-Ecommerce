@@ -35,42 +35,8 @@
 							"type": "ParquetWriteSettings"
 						}
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "DS_CSV_ADLS_SOURCE",
-						"type": "DatasetReference",
-						"parameters": {
-							"storage_account_name": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
-								"type": "Expression"
-							},
-							"col_delimiter": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimiter",
-								"type": "Expression"
-							},
-							"filename": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile",
-								"type": "Expression"
-							}
-						}
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DS_CSV_ADLS_PARQUET",
-						"type": "DatasetReference"
-					}
-				]
+					"enableStaging": false
+				}
 			}
 		],
 		"parameters": {
