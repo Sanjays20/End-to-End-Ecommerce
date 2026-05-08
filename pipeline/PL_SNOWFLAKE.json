@@ -30,8 +30,28 @@
 							"type": "ParquetWriteSettings"
 						}
 					},
-					"enableStaging": false
-				}
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_SNOWFL_BLOB_SRC",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SNOWFL_BLOB_TRG",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []

@@ -1,0 +1,23 @@
+{
+	"name": "DS_EXCEL_ADLS_TRG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_EXCEL_ADLS_TRG",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('excel/', formatDateTime(utcNow(), 'yyyy'), '/', formatDateTime(utcNow(), 'MM'), '/', formatDateTime(utcNow(), 'dd'))",
+					"type": "Expression"
+				},
+				"fileSystem": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

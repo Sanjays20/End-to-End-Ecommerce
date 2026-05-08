@@ -1,0 +1,45 @@
+{
+	"name": "DS_JSON_ADLS_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_JSON_ADLS_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sample.json",
+				"folderPath": "json",
+				"fileSystem": "input"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"order_id": {
+					"type": "string"
+				},
+				"order_item_id": {
+					"type": "integer"
+				},
+				"product_id": {
+					"type": "string"
+				},
+				"seller_id": {
+					"type": "string"
+				},
+				"shipping_limit_date": {
+					"type": "string"
+				},
+				"price": {
+					"type": "number"
+				},
+				"freight_value": {
+					"type": "number"
+				}
+			}
+		}
+	}
+}

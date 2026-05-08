@@ -34,7 +34,19 @@
 						}
 					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_API_ADLS_SRC",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_API_ADLS_TRG",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []

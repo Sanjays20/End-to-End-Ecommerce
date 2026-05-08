@@ -1,0 +1,23 @@
+{
+	"name": "DS_SNOWFL_BLOB_TRG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_SNOWFL_BLOB_TRG",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@concat('sf/', formatDateTime(utcNow(), 'yyyy'), '/', formatDateTime(utcNow(), 'MM'), '/', formatDateTime(utcNow(), 'dd'))",
+					"type": "Expression"
+				},
+				"container": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
