@@ -5,149 +5,116 @@
 		"factoryName": {
 			"value": "endtoendetl"
 		},
-		"DS_BULK_ADLS_SOURCE_accountKey": {
+		"DS_BULK_ADLS_SRC_accountKey": {
 			"value": ""
 		},
-		"DS_SF_ALDS_SOURCE_password": {
+		"DS_BULK_ADLS_TRG_accountKey": {
 			"value": ""
 		},
-		"LS_API_ADLS_PARQUET_accountKey": {
+		"DS_CSV_ADLS_TRG_accountKey": {
 			"value": ""
 		},
-		"LS_AZSQL_password": {
+		"DS_EXCEL_ADLS_TRG_accountKey": {
 			"value": ""
 		},
-		"LS_AZSQL_CSVEXCEL_password": {
+		"DS_ONPREM_ADLS_TRG_accountKey": {
 			"value": ""
 		},
-		"LS_AZSQL_CSV_METADATA_password": {
+		"DS_SFTP_ADLS_SRC_accountKey": {
 			"value": ""
 		},
-		"LS_BULK_ADLS_PARQUET_accountKey": {
+		"LS_API_ADLS_TRG_accountKey": {
 			"value": ""
 		},
-		"LS_CSV_ADLS_PARQUET_accountKey": {
+		"LS_CSV_ADLS_SRC_accountKey": {
 			"value": ""
 		},
-		"LS_CSV_ADLS_SOURCE_accountKey": {
+		"LS_CSV_ADLS_TRG_accountKey": {
 			"value": ""
 		},
-		"LS_EXCEL_ADLS_PARQUET_accountKey": {
+		"LS_EXCEL_ADLS_SRC_accountKey": {
 			"value": ""
 		},
-		"LS_EXCEL_ADLS_SOURCE_accountKey": {
+		"LS_JSON_ADLS_SRC_accountKey": {
 			"value": ""
 		},
-		"LS_JSON_ADLS_PARQUET_accountKey": {
+		"LS_JSON_ADLS_TRG_accountKey": {
 			"value": ""
 		},
-		"LS_JSON_ADLS_SOURCE_accountKey": {
+		"LS_ONPREM_ADLS_SRC_password": {
 			"value": ""
 		},
-		"LS_SFTP_ADLS_PARQUET_accountKey": {
+		"LS_SFTP_ADLS_SRC_accountKey": {
 			"value": ""
 		},
-		"LS_SFTP_ADLS_RAW_accountKey": {
+		"LS_SFTP_ADLS_TRG_accountKey": {
 			"value": ""
 		},
-		"LS_SQAZURE_password": {
+		"LS_SNOWFL_BLOB_SRC_password": {
 			"value": ""
 		},
-		"LS_SQL_ADLS_PARQUET_accountKey": {
-			"value": ""
-		},
-		"LS_SQL_ADLS_SOURCE_password": {
-			"value": ""
-		},
-		"DS_BULK_ADLS_SOURCE_properties_typeProperties_url": {
-			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
-		},
-		"DS_SF_ALDS_SOURCE_properties_typeProperties_database": {
-			"value": "DBAZURESNOW"
-		},
-		"LS_API_ADLS_PARQUET_properties_typeProperties_url": {
-			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
-		},
-		"LS_AZSQL_properties_typeProperties_server": {
-			"value": "sql-srvr-etl-dev1.database.windows.net"
-		},
-		"LS_AZSQL_properties_typeProperties_database": {
-			"value": "sql-db-etl-dev"
-		},
-		"LS_AZSQL_properties_typeProperties_userName": {
-			"value": "admin1"
-		},
-		"LS_AZSQL_CSVEXCEL_properties_typeProperties_server": {
-			"value": "sql-srvr-etl-dev1.database.windows.net"
-		},
-		"LS_AZSQL_CSVEXCEL_properties_typeProperties_database": {
-			"value": "sql-db-etl-dev"
-		},
-		"LS_AZSQL_CSVEXCEL_properties_typeProperties_userName": {
-			"value": "admin1"
-		},
-		"LS_AZSQL_CSV_METADATA_properties_typeProperties_server": {
-			"value": "sql-srvr-etl-dev1.database.windows.net"
-		},
-		"LS_AZSQL_CSV_METADATA_properties_typeProperties_database": {
-			"value": "sql-db-etl-dev"
-		},
-		"LS_AZSQL_CSV_METADATA_properties_typeProperties_userName": {
-			"value": "admin1"
-		},
-		"LS_BULK_ADLS_PARQUET_properties_typeProperties_url": {
-			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
-		},
-		"LS_CSV_ADLS_PARQUET_properties_typeProperties_url": {
-			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
-		},
-		"LS_CSV_ADLS_SOURCE_properties_typeProperties_url": {
-			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
-		},
-		"LS_EXCEL_ADLS_PARQUET_properties_typeProperties_url": {
-			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
-		},
-		"LS_EXCEL_ADLS_SOURCE_properties_typeProperties_url": {
-			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
-		},
-		"LS_JSON_ADLS_PARQUET_properties_typeProperties_url": {
-			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
-		},
-		"LS_JSON_ADLS_SOURCE_properties_typeProperties_url": {
-			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
-		},
-		"LS_RESTAPI_ADLS_SOURCE_properties_typeProperties_url": {
+		"DS_API_ADLS_SRC_properties_typeProperties_url": {
 			"value": "https://retoolapi.dev/JqZKPN/data"
 		},
-		"LS_SFTP_ADLS_PARQUET_properties_typeProperties_url": {
+		"DS_BULK_ADLS_SRC_properties_typeProperties_url": {
+			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"DS_BULK_ADLS_TRG_properties_typeProperties_url": {
 			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
 		},
-		"LS_SFTP_ADLS_RAW_properties_typeProperties_url": {
+		"DS_CSV_ADLS_TRG_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"DS_EXCEL_ADLS_TRG_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"DS_ONPREM_ADLS_TRG_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"DS_SFTP_ADLS_SRC_properties_typeProperties_url": {
 			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"DS_SNOWFL_BLOB_TRG_sasUri": {
+			"value": ""
+		},
+		"LS_API_ADLS_TRG_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_CSV_ADLS_SRC_properties_typeProperties_url": {
+			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_CSV_ADLS_TRG_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_ADLS_SRC_properties_typeProperties_url": {
+			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_JSON_ADLS_SRC_properties_typeProperties_url": {
+			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_JSON_ADLS_TRG_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_ONPREM_ADLS_SRC_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"LS_ONPREM_ADLS_SRC_properties_typeProperties_database": {
+			"value": "End_to_End_ETL_PROJECT"
+		},
+		"LS_ONPREM_ADLS_SRC_properties_typeProperties_userName": {
+			"value": "admin"
+		},
+		"LS_SFTP_ADLS_SRC_properties_typeProperties_url": {
+			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_SFTP_ADLS_TRG_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
 		},
 		"LS_SF_ADLS_PARQUET_sasUri": {
 			"value": ""
 		},
-		"LS_SQAZURE_properties_typeProperties_server": {
-			"value": "sql-srvr-etl-dev1.database.windows.net"
-		},
-		"LS_SQAZURE_properties_typeProperties_database": {
-			"value": "sql-db-etl-dev"
-		},
-		"LS_SQAZURE_properties_typeProperties_userName": {
-			"value": "admin1"
-		},
-		"LS_SQL_ADLS_PARQUET_properties_typeProperties_url": {
-			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
-		},
-		"LS_SQL_ADLS_SOURCE_properties_typeProperties_server": {
-			"value": "localhost"
-		},
-		"LS_SQL_ADLS_SOURCE_properties_typeProperties_database": {
-			"value": "End_to_End_ETL_PROJECT"
-		},
-		"LS_SQL_ADLS_SOURCE_properties_typeProperties_userName": {
-			"value": "admin"
+		"LS_SNOWFL_BLOB_SRC_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
 		}
 	}
 }
