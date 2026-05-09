@@ -29,12 +29,6 @@
 		"LS_AZSQLDB_METADATA_password": {
 			"value": ""
 		},
-		"LS_CSV_ADLS_SRC_accountKey": {
-			"value": ""
-		},
-		"LS_CSV_ADLS_TRG_accountKey": {
-			"value": ""
-		},
 		"LS_EXCEL_ADLS_SRC_accountKey": {
 			"value": ""
 		},
@@ -93,10 +87,10 @@
 			"value": "admin1"
 		},
 		"LS_CSV_ADLS_SRC_properties_typeProperties_url": {
-			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+			"value": "@{linkedService().storage_account_loc}"
 		},
 		"LS_CSV_ADLS_TRG_properties_typeProperties_url": {
-			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+			"value": "@{linkedService().storage_account_loc}"
 		},
 		"LS_EXCEL_ADLS_SRC_properties_typeProperties_url": {
 			"value": "https://adlsdevrawdata.dfs.core.windows.net/"

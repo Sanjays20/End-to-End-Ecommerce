@@ -39,14 +39,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_METADATA'"
 		},
-		"LS_CSV_ADLS_SRC_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS_SRC'"
-		},
-		"LS_CSV_ADLS_TRG_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS_TRG'"
-		},
 		"LS_EXCEL_ADLS_SRC_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_ADLS_SRC'"
@@ -125,11 +117,11 @@
 		},
 		"LS_CSV_ADLS_SRC_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
+			"defaultValue": "@{linkedService().storage_account_loc}"
 		},
 		"LS_CSV_ADLS_TRG_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
+			"defaultValue": "@{linkedService().storage_account_loc}"
 		},
 		"LS_EXCEL_ADLS_SRC_properties_typeProperties_url": {
 			"type": "string",
@@ -221,12 +213,6 @@
 					},
 					"LS_AZSQLDB_METADATA_password": {
 						"value": "[parameters('LS_AZSQLDB_METADATA_password')]"
-					},
-					"LS_CSV_ADLS_SRC_accountKey": {
-						"value": "[parameters('LS_CSV_ADLS_SRC_accountKey')]"
-					},
-					"LS_CSV_ADLS_TRG_accountKey": {
-						"value": "[parameters('LS_CSV_ADLS_TRG_accountKey')]"
 					},
 					"LS_EXCEL_ADLS_SRC_accountKey": {
 						"value": "[parameters('LS_EXCEL_ADLS_SRC_accountKey')]"

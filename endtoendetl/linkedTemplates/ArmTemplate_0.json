@@ -39,14 +39,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_METADATA'"
 		},
-		"LS_CSV_ADLS_SRC_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS_SRC'"
-		},
-		"LS_CSV_ADLS_TRG_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_CSV_ADLS_TRG'"
-		},
 		"LS_EXCEL_ADLS_SRC_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_ADLS_SRC'"
@@ -121,11 +113,11 @@
 		},
 		"LS_CSV_ADLS_SRC_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
+			"defaultValue": "@{linkedService().storage_account_loc}"
 		},
 		"LS_CSV_ADLS_TRG_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
+			"defaultValue": "@{linkedService().storage_account_loc}"
 		},
 		"LS_EXCEL_ADLS_SRC_properties_typeProperties_url": {
 			"type": "string",
@@ -334,14 +326,15 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"parameters": {
+					"storage_account_loc": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('LS_CSV_ADLS_SRC_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_CSV_ADLS_SRC_accountKey')]"
-					}
+					"url": "[parameters('LS_CSV_ADLS_SRC_properties_typeProperties_url')]"
 				}
 			},
 			"dependsOn": []
@@ -351,14 +344,15 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"parameters": {
+					"storage_account_loc": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('LS_CSV_ADLS_TRG_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_CSV_ADLS_TRG_accountKey')]"
-					}
+					"url": "[parameters('LS_CSV_ADLS_TRG_properties_typeProperties_url')]"
 				}
 			},
 			"dependsOn": []
