@@ -26,6 +26,9 @@
 		"LS_API_ADLS_TRG_accountKey": {
 			"value": ""
 		},
+		"LS_AZSQLDB_METADATA_password": {
+			"value": ""
+		},
 		"LS_CSV_ADLS_SRC_accountKey": {
 			"value": ""
 		},
@@ -51,9 +54,6 @@
 			"value": ""
 		},
 		"LS_SNOWFL_BLOB_SRC_password": {
-			"value": ""
-		},
-		"LS_AZSQLDB_METADATA_password": {
 			"value": ""
 		},
 		"DS_API_ADLS_SRC_properties_typeProperties_url": {
@@ -82,6 +82,15 @@
 		},
 		"LS_API_ADLS_TRG_properties_typeProperties_url": {
 			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
+			"value": "sql-srvr-etl-dev1.database.windows.net"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_database": {
+			"value": "sql-db-etl-dev"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
+			"value": "admin1"
 		},
 		"LS_CSV_ADLS_SRC_properties_typeProperties_url": {
 			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
@@ -118,15 +127,6 @@
 		},
 		"LS_SNOWFL_BLOB_SRC_properties_typeProperties_database": {
 			"value": "DBAZURESNOW"
-		},
-		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
-			"value": "sql-srvr-etl-dev1.database.windows.net"
-		},
-		"LS_AZSQLDB_METADATA_properties_typeProperties_database": {
-			"value": "sql-db-etl-dev"
-		},
-		"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
-			"value": "admin1"
 		}
 	}
 }
