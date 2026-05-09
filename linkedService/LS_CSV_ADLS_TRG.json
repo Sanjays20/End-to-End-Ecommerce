@@ -9,7 +9,7 @@
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://adlsdevsourcedata.dfs.core.windows.net/"
+			"url": "@{linkedService().storage_account_loc}"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/linkedservices"
