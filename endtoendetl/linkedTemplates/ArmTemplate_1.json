@@ -167,7 +167,13 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "LS_CSV_ADLS_SRC",
-					"type": "LinkedServiceReference"
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"storage_account_loc": {
+							"value": "@dataset().storage_account_loc",
+							"type": "Expression"
+						}
+					}
 				},
 				"parameters": {
 					"storage_account_loc": {
@@ -231,8 +237,7 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "LS_CSV_ADLS_TRG",
-					"type": "LinkedServiceReference",
-					"parameters": {}
+					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
 				"type": "Parquet",
