@@ -53,6 +53,9 @@
 		"LS_SNOWFL_BLOB_SRC_password": {
 			"value": ""
 		},
+		"LS_AZSQLDB_METADATA_password": {
+			"value": ""
+		},
 		"DS_API_ADLS_SRC_properties_typeProperties_url": {
 			"value": "https://retoolapi.dev/JqZKPN/data"
 		},
@@ -115,6 +118,15 @@
 		},
 		"LS_SNOWFL_BLOB_SRC_properties_typeProperties_database": {
 			"value": "DBAZURESNOW"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
+			"value": "sql-srvr-etl-dev1.database.windows.net"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_database": {
+			"value": "sql-db-etl-dev"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
+			"value": "admin1"
 		},
 		"containerUri": {
 			"value": ""
