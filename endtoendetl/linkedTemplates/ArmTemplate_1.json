@@ -152,10 +152,6 @@
 										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
 										"type": "Expression"
 									},
-									"directory": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcepath",
-										"type": "Expression"
-									},
 									"filename": {
 										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile",
 										"type": "Expression"
@@ -539,7 +535,8 @@
 								"referenceName": "DS_AZSQLDB_METADATA",
 								"type": "DatasetReference",
 								"parameters": {}
-							}
+							},
+							"firstRowOnly": false
 						}
 					},
 					{
@@ -664,7 +661,8 @@
 								"referenceName": "DS_AZSQLDB_METADATA",
 								"type": "DatasetReference",
 								"parameters": {}
-							}
+							},
+							"firstRowOnly": false
 						}
 					},
 					{
@@ -790,7 +788,8 @@
 								"referenceName": "DS_AZSQLDB_METADATA",
 								"type": "DatasetReference",
 								"parameters": {}
-							}
+							},
+							"firstRowOnly": false
 						}
 					},
 					{

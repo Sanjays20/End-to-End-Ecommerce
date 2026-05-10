@@ -180,7 +180,8 @@
 								"referenceName": "DS_AZSQLDB_METADATA",
 								"type": "DatasetReference",
 								"parameters": {}
-							}
+							},
+							"firstRowOnly": false
 						}
 					},
 					{
@@ -405,7 +406,8 @@
 								"referenceName": "DS_AZSQLDB_METADATA",
 								"type": "DatasetReference",
 								"parameters": {}
-							}
+							},
+							"firstRowOnly": false
 						}
 					},
 					{
@@ -670,10 +672,6 @@
 									},
 									"col_delimiter": {
 										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimiter",
-										"type": "Expression"
-									},
-									"directory": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcepath",
 										"type": "Expression"
 									}
 								}
@@ -956,10 +954,6 @@
 										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
 										"type": "Expression"
 									},
-									"directory": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcepath",
-										"type": "Expression"
-									},
 									"filename": {
 										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile",
 										"type": "Expression"
@@ -1135,7 +1129,8 @@
 								"referenceName": "DS_AZSQLDB_METADATA",
 								"type": "DatasetReference",
 								"parameters": {}
-							}
+							},
+							"firstRowOnly": false
 						}
 					},
 					{
@@ -1521,9 +1516,6 @@
 					},
 					"col_delimiter": {
 						"type": "string"
-					},
-					"directory": {
-						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -1533,10 +1525,6 @@
 						"type": "AzureBlobFSLocation",
 						"fileName": {
 							"value": "@dataset().filename",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@dataset().directory",
 							"type": "Expression"
 						}
 					},
@@ -1573,9 +1561,6 @@
 					"storage_account_loc": {
 						"type": "string"
 					},
-					"directory": {
-						"type": "string"
-					},
 					"filename": {
 						"type": "string"
 					},
@@ -1594,10 +1579,6 @@
 						"type": "AzureBlobFSLocation",
 						"fileName": {
 							"value": "@dataset().filename",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@dataset().directory",
 							"type": "Expression"
 						}
 					}
