@@ -5,6 +5,21 @@
 		"factoryName": {
 			"value": "endtoendetl"
 		},
+		"LS_AZSQLDB_METADATA_password": {
+			"value": ""
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
+			"value": "sql-srvr-etl-dev1.database.windows.net"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_database": {
+			"value": "sql-db-etl-dev"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
+			"value": "admin1"
+		},
+		"LS_AZADLS_PARAM_properties_typeProperties_url": {
+			"value": "@{linkedService().storage_account_loc}"
+		},
 		"containerUri": {
 			"value": ""
 		},
