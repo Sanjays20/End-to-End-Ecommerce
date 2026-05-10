@@ -1,0 +1,12 @@
+{
+	"name": "DS_SQL_ADLS_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_ADLS_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
