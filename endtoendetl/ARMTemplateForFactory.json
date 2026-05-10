@@ -6,29 +6,12 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "endtoendetl"
-		},
-		"DS_SNOWFL_BLOB_TRG_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'DS_SNOWFL_BLOB_TRG'"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_SNOWFL_BLOB_TRG')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"sasUri": "[parameters('DS_SNOWFL_BLOB_TRG_sasUri')]"
-				}
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",

@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "endtoendetl"
 		},
-		"DS_SNOWFL_BLOB_TRG_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'DS_SNOWFL_BLOB_TRG'"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -37,9 +33,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"DS_SNOWFL_BLOB_TRG_sasUri": {
-						"value": "[parameters('DS_SNOWFL_BLOB_TRG_sasUri')]"
 					}
 				}
 			},
