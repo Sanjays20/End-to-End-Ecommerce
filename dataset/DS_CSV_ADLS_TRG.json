@@ -3,7 +3,18 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_CSV_ADLS_TRG",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"storage_account_loc": {
+					"value": "@dataset().storage_account_loc",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"storage_account_loc": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "Parquet",
