@@ -8,6 +8,21 @@
 		"LS_AZSQLDB_METADATA_password": {
 			"value": ""
 		},
+		"LS_JSON_SRC_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_TRG_accountKey": {
+			"value": ""
+		},
+		"DS_API_TRG_accountKey": {
+			"value": ""
+		},
+		"LS_BULK_SRC_accountKey": {
+			"value": ""
+		},
+		"LS_BULK_TRG_accountKey": {
+			"value": ""
+		},
 		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
 			"value": "sql-srvr-etl-dev1.database.windows.net"
 		},
@@ -19,6 +34,24 @@
 		},
 		"LS_AZADLS_PARAM_properties_typeProperties_url": {
 			"value": "@{linkedService().storage_account_loc}"
+		},
+		"LS_JSON_SRC_properties_typeProperties_url": {
+			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_JSON_TRG_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_API_SRC_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/m1MlSq/data"
+		},
+		"DS_API_TRG_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_BULK_SRC_properties_typeProperties_url": {
+			"value": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_BULK_TRG_properties_typeProperties_url": {
+			"value": "https://adlsdevsourcedata.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""

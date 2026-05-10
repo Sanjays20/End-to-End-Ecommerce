@@ -11,6 +11,26 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_METADATA'"
 		},
+		"LS_JSON_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON_SRC'"
+		},
+		"LS_JSON_TRG_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON_TRG'"
+		},
+		"DS_API_TRG_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_API_TRG'"
+		},
+		"LS_BULK_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULK_SRC'"
+		},
+		"LS_BULK_TRG_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULK_TRG'"
+		},
 		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "sql-srvr-etl-dev1.database.windows.net"
@@ -26,6 +46,30 @@
 		"LS_AZADLS_PARAM_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "@{linkedService().storage_account_loc}"
+		},
+		"LS_JSON_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_JSON_TRG_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_API_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/m1MlSq/data"
+		},
+		"DS_API_TRG_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
+		},
+		"LS_BULK_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_BULK_TRG_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -57,6 +101,21 @@
 					"LS_AZSQLDB_METADATA_password": {
 						"value": "[parameters('LS_AZSQLDB_METADATA_password')]"
 					},
+					"LS_JSON_SRC_accountKey": {
+						"value": "[parameters('LS_JSON_SRC_accountKey')]"
+					},
+					"LS_JSON_TRG_accountKey": {
+						"value": "[parameters('LS_JSON_TRG_accountKey')]"
+					},
+					"DS_API_TRG_accountKey": {
+						"value": "[parameters('DS_API_TRG_accountKey')]"
+					},
+					"LS_BULK_SRC_accountKey": {
+						"value": "[parameters('LS_BULK_SRC_accountKey')]"
+					},
+					"LS_BULK_TRG_accountKey": {
+						"value": "[parameters('LS_BULK_TRG_accountKey')]"
+					},
 					"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
 						"value": "[parameters('LS_AZSQLDB_METADATA_properties_typeProperties_server')]"
 					},
@@ -68,10 +127,48 @@
 					},
 					"LS_AZADLS_PARAM_properties_typeProperties_url": {
 						"value": "[parameters('LS_AZADLS_PARAM_properties_typeProperties_url')]"
+					},
+					"LS_JSON_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_JSON_SRC_properties_typeProperties_url')]"
+					},
+					"LS_JSON_TRG_properties_typeProperties_url": {
+						"value": "[parameters('LS_JSON_TRG_properties_typeProperties_url')]"
+					},
+					"LS_API_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_API_SRC_properties_typeProperties_url')]"
+					},
+					"DS_API_TRG_properties_typeProperties_url": {
+						"value": "[parameters('DS_API_TRG_properties_typeProperties_url')]"
+					},
+					"LS_BULK_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_BULK_SRC_properties_typeProperties_url')]"
+					},
+					"LS_BULK_TRG_properties_typeProperties_url": {
+						"value": "[parameters('LS_BULK_TRG_properties_typeProperties_url')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "endtoendetl_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'endtoendetl_ArmTemplate_0')]"
+			]
 		}
 	]
 }
