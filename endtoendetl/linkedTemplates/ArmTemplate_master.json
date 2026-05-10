@@ -7,9 +7,21 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "endtoendetl"
 		},
+		"DS_API_TRG_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_API_TRG'"
+		},
 		"LS_AZSQLDB_METADATA_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_METADATA'"
+		},
+		"LS_BULK_SRC_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULK_SRC'"
+		},
+		"LS_BULK_TRG_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULK_TRG'"
 		},
 		"LS_JSON_SRC_accountKey": {
 			"type": "secureString",
@@ -19,17 +31,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_JSON_TRG'"
 		},
-		"DS_API_TRG_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'DS_API_TRG'"
+		"DS_API_TRG_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
 		},
-		"LS_BULK_SRC_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_BULK_SRC'"
+		"LS_API_SRC_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/m1MlSq/data"
 		},
-		"LS_BULK_TRG_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_BULK_TRG'"
+		"LS_AZADLS_PARAM_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().storage_account_loc}"
 		},
 		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
 			"type": "string",
@@ -43,31 +55,19 @@
 			"type": "string",
 			"defaultValue": "admin1"
 		},
-		"LS_AZADLS_PARAM_properties_typeProperties_url": {
+		"LS_BULK_SRC_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "@{linkedService().storage_account_loc}"
+			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
+		},
+		"LS_BULK_TRG_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
 		},
 		"LS_JSON_SRC_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
 		},
 		"LS_JSON_TRG_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
-		},
-		"LS_API_SRC_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://retoolapi.dev/m1MlSq/data"
-		},
-		"DS_API_TRG_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
-		},
-		"LS_BULK_SRC_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevrawdata.dfs.core.windows.net/"
-		},
-		"LS_BULK_TRG_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevsourcedata.dfs.core.windows.net/"
 		},
@@ -98,8 +98,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"DS_API_TRG_accountKey": {
+						"value": "[parameters('DS_API_TRG_accountKey')]"
+					},
 					"LS_AZSQLDB_METADATA_password": {
 						"value": "[parameters('LS_AZSQLDB_METADATA_password')]"
+					},
+					"LS_BULK_SRC_accountKey": {
+						"value": "[parameters('LS_BULK_SRC_accountKey')]"
+					},
+					"LS_BULK_TRG_accountKey": {
+						"value": "[parameters('LS_BULK_TRG_accountKey')]"
 					},
 					"LS_JSON_SRC_accountKey": {
 						"value": "[parameters('LS_JSON_SRC_accountKey')]"
@@ -107,14 +116,14 @@
 					"LS_JSON_TRG_accountKey": {
 						"value": "[parameters('LS_JSON_TRG_accountKey')]"
 					},
-					"DS_API_TRG_accountKey": {
-						"value": "[parameters('DS_API_TRG_accountKey')]"
+					"DS_API_TRG_properties_typeProperties_url": {
+						"value": "[parameters('DS_API_TRG_properties_typeProperties_url')]"
 					},
-					"LS_BULK_SRC_accountKey": {
-						"value": "[parameters('LS_BULK_SRC_accountKey')]"
+					"LS_API_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_API_SRC_properties_typeProperties_url')]"
 					},
-					"LS_BULK_TRG_accountKey": {
-						"value": "[parameters('LS_BULK_TRG_accountKey')]"
+					"LS_AZADLS_PARAM_properties_typeProperties_url": {
+						"value": "[parameters('LS_AZADLS_PARAM_properties_typeProperties_url')]"
 					},
 					"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
 						"value": "[parameters('LS_AZSQLDB_METADATA_properties_typeProperties_server')]"
@@ -125,26 +134,17 @@
 					"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
 						"value": "[parameters('LS_AZSQLDB_METADATA_properties_typeProperties_userName')]"
 					},
-					"LS_AZADLS_PARAM_properties_typeProperties_url": {
-						"value": "[parameters('LS_AZADLS_PARAM_properties_typeProperties_url')]"
+					"LS_BULK_SRC_properties_typeProperties_url": {
+						"value": "[parameters('LS_BULK_SRC_properties_typeProperties_url')]"
+					},
+					"LS_BULK_TRG_properties_typeProperties_url": {
+						"value": "[parameters('LS_BULK_TRG_properties_typeProperties_url')]"
 					},
 					"LS_JSON_SRC_properties_typeProperties_url": {
 						"value": "[parameters('LS_JSON_SRC_properties_typeProperties_url')]"
 					},
 					"LS_JSON_TRG_properties_typeProperties_url": {
 						"value": "[parameters('LS_JSON_TRG_properties_typeProperties_url')]"
-					},
-					"LS_API_SRC_properties_typeProperties_url": {
-						"value": "[parameters('LS_API_SRC_properties_typeProperties_url')]"
-					},
-					"DS_API_TRG_properties_typeProperties_url": {
-						"value": "[parameters('DS_API_TRG_properties_typeProperties_url')]"
-					},
-					"LS_BULK_SRC_properties_typeProperties_url": {
-						"value": "[parameters('LS_BULK_SRC_properties_typeProperties_url')]"
-					},
-					"LS_BULK_TRG_properties_typeProperties_url": {
-						"value": "[parameters('LS_BULK_TRG_properties_typeProperties_url')]"
 					}
 				}
 			},
