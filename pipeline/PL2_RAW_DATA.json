@@ -142,12 +142,19 @@
 							"value": "json",
 							"activities": [
 								{
-									"name": "Wait5",
-									"type": "Wait",
+									"name": "EXEC_JSON",
+									"type": "ExecutePipeline",
 									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
 									"userProperties": [],
 									"typeProperties": {
-										"waitTimeInSeconds": 1
+										"pipeline": {
+											"referenceName": "PL_JSON",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true
 									}
 								}
 							]
