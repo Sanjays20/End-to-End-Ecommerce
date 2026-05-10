@@ -15,13 +15,13 @@
 			"storage_account_loc": {
 				"type": "string"
 			},
-			"directory": {
-				"type": "string"
-			},
 			"filename": {
 				"type": "string"
 			},
 			"col_delimiter": {
+				"type": "string"
+			},
+			"directory": {
 				"type": "string"
 			}
 		},

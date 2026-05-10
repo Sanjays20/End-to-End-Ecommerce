@@ -1,0 +1,23 @@
+{
+	"name": "DS_BULK_TRG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BULK_TRG",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat(\n    'bulkuploiad/',\n    formatDateTime(utcNow(),'yyyy'),\n    '/',\n    formatDateTime(utcNow(),'MM'),\n    '/',\n    formatDateTime(utcNow(),'dd')\n)",
+					"type": "Expression"
+				},
+				"fileSystem": "input"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
