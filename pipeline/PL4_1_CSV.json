@@ -33,7 +33,8 @@
 					"dataset": {
 						"referenceName": "DS_AZSQLDB_METADATA",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
