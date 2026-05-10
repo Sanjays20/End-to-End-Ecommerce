@@ -15,9 +15,6 @@
 			"storage_account_loc": {
 				"type": "string"
 			},
-			"directory": {
-				"type": "string"
-			},
 			"filename": {
 				"type": "string"
 			},
@@ -36,10 +33,6 @@
 				"type": "AzureBlobFSLocation",
 				"fileName": {
 					"value": "@dataset().filename",
-					"type": "Expression"
-				},
-				"folderPath": {
-					"value": "@dataset().directory",
 					"type": "Expression"
 				}
 			}

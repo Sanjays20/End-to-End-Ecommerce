@@ -166,10 +166,6 @@
 							"col_delimiter": {
 								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimiter",
 								"type": "Expression"
-							},
-							"directory": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcepath",
-								"type": "Expression"
 							}
 						}
 					}
