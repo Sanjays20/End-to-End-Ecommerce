@@ -806,7 +806,7 @@
 								"type": "DatasetReference",
 								"parameters": {
 									"storage_account_loc": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sinkdata",
+										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.targetdata",
 										"type": "Expression"
 									},
 									"directory": {
