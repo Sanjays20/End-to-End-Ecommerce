@@ -156,7 +156,7 @@
 								"type": "Expression"
 							},
 							"directory": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sinkdirectory",
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.targetdirectory",
 								"type": "Expression"
 							}
 						}
