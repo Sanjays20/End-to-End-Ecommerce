@@ -295,6 +295,9 @@
 					},
 					"col_delimiter": {
 						"type": "string"
+					},
+					"directory": {
+						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -304,6 +307,10 @@
 						"type": "AzureBlobFSLocation",
 						"fileName": {
 							"value": "@dataset().filename",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@dataset().directory",
 							"type": "Expression"
 						}
 					},
@@ -795,6 +802,10 @@
 									},
 									"col_delimiter": {
 										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimiter",
+										"type": "Expression"
+									},
+									"directory": {
+										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedirectory",
 										"type": "Expression"
 									}
 								}
